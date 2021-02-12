@@ -30,7 +30,7 @@ function App() {
 		}
 	}, [update])
 	return (
-		<div className="App m-1">
+		<div className="App m-5">
 			<Form
 				onSubmit={async (e) => {
 					e.preventDefault()
@@ -45,7 +45,7 @@ function App() {
 					onChange={(e) => setLocation(e.target.value)}
 				></Form.Control>
 			</Form>
-			<Container>
+			<Container fluid>
 				<Row>
 					{weather !== null &&
 						weather.daily.map((element, index) => (
