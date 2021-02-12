@@ -6,7 +6,7 @@ import { Col, Container, Form, Row } from "react-bootstrap"
 import Weather from "./Components/Weather"
 /**
  * let weatherBox = await fetch(
-						`api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&cnt=7&appid=3d00be1e2a9c3b2d72c968387fe867c6`
+						`api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&cnt=7&appid=${process.env.REACT_APP_KEY}`
 					)
 					weatherBox = await weatherBox.json()
  */
@@ -20,20 +20,20 @@ function App() {
 		}
 		//let coords = geocoder.geocode(location)
 		//console.log("here goes the fetch for ", coords)
-		//let URL = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&format=json&appid=3d00be1e2a9c3b2d72c968387fe867c6`
+		//let URL = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&format=json&appid=${process.env.REACT_APP_KEY}`
 
 		//console.log("URL=")
 		//console.log(URL)
 		try {
 			let coords = await fetch(
-				`http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=3d00be1e2a9c3b2d72c968387fe867c6`
+				`http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=${process.env.REACT_APP_KEY}`
 			)
 			coords = await coords.json()
 			let lat = coords[0].lat
 			let lon = coords[0].lon
 			console.log(coords[0])
 			let URL = `
-      https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely,hourly&appid=3d00be1e2a9c3b2d72c968387fe867c6`
+      https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely,hourly&appid=${process.env.REACT_APP_KEY}`
 			let response = await fetch(URL)
 			response = await response.json()
 			setWeather(response)
