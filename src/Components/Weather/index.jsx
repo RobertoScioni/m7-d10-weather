@@ -22,7 +22,7 @@ function Weather(props) {
 			</Col>
 			<Col className="col-12">
 				<Image
-					src={`http://openweathermap.org/img/wn/${props.weather.weather[0].icon}@2x.png`}
+					src={`https://openweathermap.org/img/wn/${props.weather.weather[0].icon}@2x.png`}
 					alt={props.weather.weather[0].description}
 					title={props.weather.weather[0].description}
 				></Image>
