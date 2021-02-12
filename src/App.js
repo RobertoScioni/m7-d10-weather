@@ -52,6 +52,7 @@ function App() {
 					e.preventDefault()
 					setUpdate(!update)
 				}}
+				className="mb-3"
 			>
 				<Form.Control
 					type="text"
@@ -64,7 +65,7 @@ function App() {
 				<Row>
 					{weather !== null &&
 						weather.daily.map((element, index) => (
-							<Col className="col-12 col-md-2">
+							<Col className="col-12 col-md-2 mb-3">
 								<Weather
 									page={0}
 									weather={weather.daily[index]}
