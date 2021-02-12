@@ -33,7 +33,7 @@ function App() {
 			let lon = coords[0].lon
 			console.log(coords[0])
 			let URL = `
-      https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly&appid=3d00be1e2a9c3b2d72c968387fe867c6`
+      https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely,hourly&appid=3d00be1e2a9c3b2d72c968387fe867c6`
 			let response = await fetch(URL)
 			response = await response.json()
 			setWeather(response)
@@ -65,7 +65,7 @@ function App() {
 				<Row>
 					{weather !== null &&
 						weather.daily.map((element, index) => (
-							<Col className="col-12 col-md-2 mb-3">
+							<Col className="col-12 col-sm-6 col-md-3 border-bottom">
 								<Weather
 									page={0}
 									weather={weather.daily[index]}
