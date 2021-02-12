@@ -6,7 +6,7 @@ function Weather(props) {
 	useEffect(() => {
 		//console.log("props updated", props)
 	})
-	let day = moment(props.weather.dt)
+	let day = moment.unix(props.weather.dt)
 	console.log(
 		"day in unix",
 		props.weather.dt,
